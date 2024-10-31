@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            background-image: url("d9.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0ed315;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.386);
+            backdrop-filter: blur(2px); /* Add blur effect */
+            padding: 40px;
+            /* Increased padding for the form */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(246, 246, 246, 0.767);
+            /* Adjusted shadow for depth */
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        select, input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        select {
+            background-color: #fff;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #total {
+            text-align: right;
+            font-size: 18px;
+            color: #333;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+        .navbar-container {
+    top: 0; /* Aligns it to the top */
+    left: 0;
+    right: 0;
+    margin: 5px 5px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 10%;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove margins */
+}
+
+        .navbar {
+            display: flex;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            margin: 0 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            color: #fff;
+            background-color: #007BFF;
+            box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.4);
+        }
+        .navbar a:active {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: inset 0px 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <script>
+        function calculateTotal() {
+            const cateringPrice = parseFloat(document.getElementById("catering").value);
+            const musicPrice = parseFloat(document.getElementById("music").value);
+            const decorationPrice = parseFloat(document.getElementById("decoration").value);
+            const photographyPrice = parseFloat(document.getElementById("photography").value);
+            const venuePrice = parseFloat(document.getElementById("venue").value);
+
+            const total = cateringPrice + musicPrice + decorationPrice + photographyPrice + venuePrice;
+            document.getElementById("total").textContent = "Total: $" + total.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ask.html">Book</a></li>
+                <li><a href="Userinterface.php">Events</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Service Form</h1>
+    <form action="Scheck.php" method="POST">
+        <label for="catering">Catering:</label>
+        <select id="catering" name="catering" onchange="calculateTotal()" required>
+            <option value="500">Basic Catering ($500)</option>
+            <option value="1000">Standard Catering ($1000)</option>
+            <option value="1500">Premium Catering ($1500)</option>
+        </select>
+
+        <label for="music">Music:</label>
+        <select id="music" name="music" onchange="calculateTotal()" required>
+            <option value="300">Local DJ ($300)</option>
+            <option value="700">Live Band ($700)</option>
+            <option value="1200">Famous DJ ($1200)</option>
+        </select>
+
+        <label for="decoration">Decoration:</label>
+        <select id="decoration" name="decoration" onchange="calculateTotal()" required>
+            <option value="200">Basic Decoration ($200)</option>
+            <option value="600">Standard Decoration ($600)</option>
+            <option value="1000">Premium Decoration ($1000)</option>
+        </select>
+
+        <label for="photography">Photography:</label>
+        <select id="photography" name="photography" onchange="calculateTotal()" required>
+            <option value="400">Basic Photography ($400)</option>
+            <option value="800">Standard Photography ($800)</option>
+            <option value="1500">Professional Photography ($1500)</option>
+        </select>
+
+        <label for="venue">Venue:</label>
+        <select id="venue" name="venue" onchange="calculateTotal()" required>
+            <option value="1000">Community Hall ($1000)</option>
+            <option value="3000">Luxury Hotel ($3000)</option>
+            <option value="5000">Exclusive Resort ($5000)</option>
+        </select>
+
+        <h3 id="total">Total: $0.00</h3>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

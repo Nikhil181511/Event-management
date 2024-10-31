@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("6.jpg");
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: -10px;
+
+        }
+
+        .login-buttons {
+            margin-top: -22px;
+            font-family: 'Times New Roman', Times, serif;
+            height: 50%;
+            width: 100%;
+            background-color: #b0b0b0c7;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .login-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            color: #0b0b0b;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.6s ease;
+            z-index: 3;
+        }
+
+        .login-button.admin {
+            background-color: #09f047;
+        }
+
+        .login-button.user {
+            background-color: #097ae5;
+        }
+
+        .login-button:hover {
+            color: #ddd;
+            background-color: #000;
+        }
+
+        .cap {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #dfd8d8;
+            width: 100%;
+            height: 20%;
+            text-align: center;
+        }
+        .navbar-container {
+    top: 0; /* Aligns it to the top */
+    left: 0;
+    right: 0;
+    margin: 5px 5px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove margins */
+}
+
+        .navbar {
+            display: flex;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            margin: 0 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            color: #fff;
+            background-color: #007BFF;
+            box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.4);
+        }
+        .navbar a:active {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: inset 0px 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <script>
+        function updateLink() {
+            // Get the oid value from the input
+            const oid = document.getElementById("oid").value;
+            // Update the href attribute of the link with the oid parameter
+            document.getElementById("update-link").href = "update.php?oid=" + oid;
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ask.html">Book</a></li>
+                <li><a href="Userinterface.php">Events</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="cap">
+            <h1 style="color: rgb(16, 3, 69); text-align: center;">
+                <strong>Event</strong>
+            </h1>
+        </div>
+        <div class="login-buttons">
+            <form method="post">
+            <input type="number" id="oid" name="oid" placeholder="Enter Organizer ID" oninput="updateLink()" required>
+            </form>
+            <a href="update.php?oid=oid" id="update-link" class="login-button admin"><b>Update/Delete</b></a>
+            <br>
+            <a href="event.html" class="login-button user"><b>New</b></a>
+        </div>
+    </div>
+</body>
+</html>

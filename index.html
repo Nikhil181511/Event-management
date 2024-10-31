@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Nav Bar</title>
+    <style>
+        body {
+            background-image: url("d1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Make the background fixed */
+            padding-top: 10px;
+            color: #f8f9fa;
+            position: relative;
+        }
+        .navbar-container {
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            display: flex;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            margin: 0 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            color: #fff;
+            background-color: #007BFF;
+            box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.4);
+        }
+        .navbar a:active {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: inset 0px 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar li {
+                margin: 10px 0;
+            }
+        }
+        .hel {
+            padding: 20%;
+            align-content: center;
+            align-items: center;
+            align-self: center;
+        }
+        .container {
+            margin-bottom: 80%;
+            margin-left: 10%;
+            padding: 3%;
+            width: 80%;
+            height: 50%;
+            background-color: #ecececa4;
+            color: black;
+            align-items: center;
+        }
+        .smaller {
+            z-index: -1;
+            font-weight: 600;
+            background-color: rgba(25, 35, 35, 0.814);
+            position: absolute;
+            margin-top: 30%;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4%;
+            width: 100%;
+            margin-top: 30%;
+            height: auto;
+            color: rgb(255, 255, 255);
+            align-items: center;
+            max-height: fit-content; /* Define max-height for scrollable effect */
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ebae06;
+            color: rgb(16, 15, 15);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 25px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .btn:hover {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#hel">Home</a></li>
+                <li><a href="#smaller">About</a></li>
+                <li><a href="User.html">Events</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="hel">
+        <div class="container">
+            <h1> We are Brilliant.</h1>
+            <p>Brilliant Event Planning is an award-winning, luxury wedding and event planning company in NYC and Boston for fun-loving, busy couples that value creativity and quality. </p>
+            <p>We draw our inspiration from YOU and your story to create one-of-a-kind weddings and events. We work collaboratively to ensure your event is cohesive and thoughtful and believe that even the smallest details can have a huge impact. We pride ourselves on our comprehensive event management so that you can have a flawless and stress-free planning experience!</p>
+        </div> 
+    </div>
+      <div class="smaller" id="smaller">
+        <h1 style="text-align: center;"> About Us</h1>
+        <p>Welcome to Brilliant Event Planning, where creativity meets luxury and every event is a masterpiece in the making.
+        <br>At Brilliant Event Planning, we are dedicated to crafting unforgettable experiences for couples and individuals who want their special moments to be as unique as their story. Based in NYC and Boston, we have earned a reputation as an award-winning, luxury wedding and event planning company. Our clients are fun-loving, busy professionals who value both creativity and quality in the events they host</p>
+        <p><h1 style="text-align: center;">What We Do</h1>
+        We believe that every event should be a true reflection of you—your personality, your style, and your vision. That's why we take a highly personalized approach to every project, ensuring that no detail is overlooked and every aspect of your event is thoughtfully curated. From intimate weddings to grand corporate events, we handle every aspect of event management with passion and professionalism.
+        </p>
+        <p>
+            <h1 style="text-align: center;">Our Services</h1>
+            Comprehensive Event Planning: Whether you're dreaming of a romantic wedding or a high-profile corporate event, we provide end-to-end event management that covers every step, from initial concept and venue selection to design, vendor coordination, and execution on the day.<br>
+            Tailored Design: Every element of your event—whether it's floral arrangements, lighting, or décor—is designed to reflect your unique style. We take inspiration from you to create one-of-a-kind experiences.<br>
+            Stress-Free Experience: Planning an event can be overwhelming, but we pride ourselves on making the process flawless and stress-free. You can trust us to manage the details while you focus on enjoying your special day.<br>
+        </p>
+        <p>
+            <h1 style="text-align: center;">Our Philosophy</h1>
+At Brilliant Event Planning, we believe that the smallest details can make the biggest difference. We approach every project with creativity, collaboration, and a commitment to excellence. Our team is passionate about ensuring that your event is cohesive, thoughtful, and reflects who you are.
+
+<br>Let us turn your vision into reality and give you a stress-free planning experience where you can enjoy every moment without worry.
+        </p>
+        <P>Ready to plan your next unforgettable event? Contact us today to start creating memories that will last a lifetime.
+
+            <br>Brilliant Event Planning
+            <br>"Where creativity meets luxury."</P>
+    </div>  
+    <center>
+        <a href="User.html" class="btn"><b>Get Started</b></a>
+    </center>
+</body>
+</html>

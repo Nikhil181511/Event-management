@@ -1,0 +1,57 @@
+CREATE TABLE Event (
+    eid INT AUTO_INCREMENT PRIMARY KEY,
+    etype VARCHAR(255),
+    ename VARCHAR(255),
+    timestart DATETIME,
+    timeend DATETIME,
+    noofguests INT
+);
+
+CREATE TABLE Customer (
+    cid INT AUTO_INCREMENT PRIMARY KEY,  
+    cfname VARCHAR(50), 
+    cmname VARCHAR(50),                 
+    clname VARCHAR(50) NOT NULL,
+    phnno VARCHAR(15) NOT NULL,    
+    eid INT
+);
+
+
+CREATE TABLE Organizer (
+    Oid INT AUTO_INCREMENT PRIMARY KEY,
+    city VARCHAR(255),
+    state VARCHAR(255),
+    area VARCHAR(255),
+    ofname VARCHAR(255),
+    omname VARCHAR(255),
+    olname VARCHAR(255),
+    password VARCHAR(255)
+);
+
+CREATE TABLE Service (
+    sid INT AUTO_INCREMENT PRIMARY KEY,
+    catering VARCHAR(255),
+    music VARCHAR(255),
+    decoration VARCHAR(255),
+    photography VARCHAR(255),
+    venue VARCHAR(255),
+    total_price int
+);
+
+CREATE TABLE Budget (
+    bid INT AUTO_INCREMENT PRIMARY KEY,
+    totalamount DECIMAL(10, 2),
+    discount DECIMAL(10, 2),
+    amountpaid DECIMAL(10, 2),
+    amountdue DECIMAL(10, 2),
+    grandtotal DECIMAL(10, 2)
+);
+
+CREATE TABLE Used (
+    oid INT,
+    eid INT,
+    PRIMARY KEY (oid, eid),
+    FOREIGN KEY (oid) REFERENCES Service(oid),
+    FOREIGN KEY (eid) REFERENCES Event(eid)
+);
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Allow vertical stacking */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            margin: 0;
+            background-image: url("d5.jpg");
+            background-size: cover; /* Ensure the background image covers the whole page */
+            background-position: center; /* Center the background image */
+        }
+
+        .container {
+            margin-top: 25px;
+            align-self: center;
+            align-content: center;
+            flex: 1; /* Allow the container to grow and fill the available space */
+            display: flex;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            padding: 30px; /* Increased padding */
+        }
+
+        .form-wrapper {
+    background: rgba(255, 255, 255, 0.178); /* Adjust opacity for transparency */
+    backdrop-filter: blur(10px); /* Add blur effect */
+    padding: 40px; /* Increased padding for the form */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.767); /* Adjusted shadow for depth */
+    width: 100%; /* Full width for responsive design */
+    max-width: 400px; /* Maximum width for larger screens */
+    height: 500px;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+
+
+        h1 {
+            margin-bottom: 30px; /* Increased space below the title */
+        }
+
+        label {
+            margin-bottom: 10px; /* Increased space below labels */
+            display: block; /* Make labels block elements */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            margin-bottom: 20px; /* Increased space below input fields */
+            width: calc(100% - 20px); /* Adjust width for padding */
+            padding: 10px; /* Padding for input fields */
+            border-radius: 4px; /* Slightly rounded corners for input fields */
+            border: 1px solid #ccc; /* Border for input fields */
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            margin-top: 10px; /* Space above buttons */
+            padding: 10px 15px; /* Padding for buttons */
+            border-radius: 4px; /* Rounded corners for buttons */
+            border: none; /* Remove border */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green background for submit */
+            color: white; /* White text for submit */
+        }
+        input[type="reset"] {
+            background-color: #f44336; /* Red background for reset */
+            color: white; /* White text for reset */
+        }
+        .navbar-container {
+            margin: 5px 1px;
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            display: flex;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            margin: 0 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            color: #fff;
+            background-color: #007BFF;
+            box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.4);
+        }
+        .navbar a:active {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: inset 0px 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ask.html">Book</a></li>
+                <li><a href="Userinterface.php">Events</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <div class="container">
+            <div class="form-wrapper">
+                <form action="check.php" method="post">
+                    <header>
+                        <h1>User Login</h1>
+                    </header>
+                    <label for="username">Enter Username:</label>
+                    <input type="text" id="username" name="username" required><br>
+                    <label for="password">Enter Password:</label>
+                    <input type="password" id="password" name="password" required><br>
+                    <input type="submit" value="Login">
+                </form>
+                <p style="color:white;">Don't have an account? <a href="Signin.html" style="color:blue;">Sign up</a></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

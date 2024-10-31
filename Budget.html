@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Details Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+           
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            display: block;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        .navbar-container {
+    top: 0; /* Aligns it to the top */
+    left: 0;
+    right: 0;
+    margin: 5px 5px;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 10%;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove margins */
+}
+
+        .navbar {
+            display: flex;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            margin: 0 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            color: #fff;
+            background-color: #007BFF;
+            box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.4);
+        }
+        .navbar a:active {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: inset 0px 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+<div class="form-container">
+    <h2>Budget Details</h2>
+    <form action="Bjcheck.php" method="POST">
+        <label for="totalamount">Total Amount:</label>
+        <input type="number" id="totalamount" name="totalamount" step="1000.0" required>
+
+        <label for="discount">Discount:</label>
+        <input type="number" id="discount" name="discount" step="5.0" placeholder="No to be enter by user">
+
+        <label for="amountpaid">Amount Paid:</label>
+        <input type="number" id="amountpaid" name="amountpaid" step="1000.0" required>
+
+        <label for="amountdue">Amount Due:</label>
+        <input type="number" id="amountdue" name="amountdue" step="1000.0" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>

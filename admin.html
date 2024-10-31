@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; 
+            min-height: 100vh; 
+            margin: 0;
+            background-image: url("d5.jpg");
+            background-size: cover; 
+        }
+        .container {
+            flex: 1; 
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 30px;
+        }
+
+        .form-wrapper {
+    background: rgba(255, 255, 255, 0.178); /* Adjust opacity for transparency */
+    backdrop-filter: blur(10px); /* Add blur effect */
+    padding: 40px; /* Increased padding for the form */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(246, 246, 246, 0.767); /* Adjusted shadow for depth */
+    width: 100%; /* Full width for responsive design */
+    max-width: 300px; /* Maximum width for larger screens */
+    height: 400px;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+        h1 {
+            margin-bottom: 30px; 
+        }
+
+        label {
+            margin-bottom: 10px; 
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            margin-bottom: 20px; 
+            width: calc(100% - 20px); 
+            padding: 10px; 
+            border-radius: 4px;
+            border: 1px solid #ccc; 
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            margin-top: 10px; 
+            padding: 10px 15px; 
+            border-radius: 4px; 
+            border: none; 
+            cursor: pointer; 
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white; 
+        }
+        input[type="reset"] {
+            background-color: #f44336; 
+            color: white; 
+        }
+        .navbar-container {
+            margin: 5px 1px;
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            display: flex;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar li {
+            margin: 0 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            color: #fff;
+            background-color: #007BFF;
+            box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.4);
+        }
+        .navbar a:active {
+            background-color: #0056b3;
+            color: #fff;
+            box-shadow: inset 0px 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ask.html">Book</a></li>
+                <li><a href="Userinterface.php">Events</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1 id="lpg">Organizer login</h1>
+            <form action="ocheck.php" method="post">
+                <label id="aduser">Enter Firstname:</label>
+                <input type="text" name="username" required>
+                <label>Enter Password:</label>
+                <input type="password" name="password" required>
+                <input type="hidden" name="eid" value="<?php echo $_GET['eid']; ?>">
+                <input type="submit" value="Confirm">
+                <input type="reset" value="Clear">
+            </form>
+            <p style="color:white;">Don't have an account? <a href="Book.html" style="color:rgb(0, 255, 98);">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>
